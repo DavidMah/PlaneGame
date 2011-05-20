@@ -120,10 +120,10 @@ package {
 				ywise = -ywise;
 			}
 
-			if( !(this.x + radius() * 2 < 0 && xwise < 0) && !(this.x - radius() * 2 > 500 && xwise > 0)) {
+			if( !(this.x - 10  < 0 && xwise < 0) && !(this.x + 10 > 500 && xwise > 0)) {
 				this.x = this.x + xwise * (slow ? s : f);
 			}
-			if( !(this.y < 0 && ywise < 0) && !(this.y > 800 && ywise > 0)) {
+			if( !(this.y - 10 < 0 && ywise < 0) && !(this.y + 10 > 800 && ywise > 0)) {
 				this.y = this.y + ywise * (slow ? s : f);
 			}
 		}

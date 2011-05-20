@@ -45,10 +45,6 @@ package {
 			background = new Background();
 			addChild(background);
 
-			scoreBoard = new Score(500, 0);
-			addChild(scoreBoard);
-
-
 			floaters = []
 
 			player = new Plane(250, 600);
@@ -67,6 +63,9 @@ package {
 			graphics.lineStyle(2, 0x000000);
 			graphics.drawRect(0, 0, 500, 800);
 
+			scoreBoard = new Score(500, 0);
+
+			addChild(scoreBoard);
 			addEventListener(Event.ENTER_FRAME, onEnterFrame);
 		
 		}
@@ -77,6 +76,7 @@ package {
 					removeChild(floaters[i][j]);
 				}
 			}
+			scoreBoard.endGame(250, 250);
 			removeChild(background);
 		}
 		private function onEnterFrame(e:Event):void {
@@ -125,6 +125,8 @@ package {
 				dealWithSignal(result[0][i]);
 				dealWithSignal(result[1][i]);
 			}
+
+			addChild(scoreBoard);
 		}	
 		private function reportKeyDown(e:KeyboardEvent):void {
 			var result:Floater = player.registerKey(e);

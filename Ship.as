@@ -15,5 +15,10 @@ package {
 		public function getHealth():int {
 			return health;
 		}
+		public function die() {
+			loader.contentLoaderInfo.addEventListener(Event.COMPLETE, setImage);
+			loader.load(deathImage());
+		}
+		public function deathImage():URLRequest{ return new URLRequest("images/explosion.gif");}
 	}
 }

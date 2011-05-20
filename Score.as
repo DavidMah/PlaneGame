@@ -11,19 +11,20 @@ package {
 			this.x = x;
 			this.y = y;
 
-			graphics.beginFill(0xffffff);
+			graphics.beginFill(0x292421);
 			graphics.drawRect(0, 0, 400, 800);
 			graphics.endFill();
 
 
 			var format:TextFormat = new TextFormat();
 			format.size = 25;
+			format.color = 0xffffff;
 
 			scoreMessage = new TextField();
 			scoreMessage.x = 25;
 			scoreMessage.y = 25;
-			scoreMessage.width = 200;
-			scoreMessage.height = 50;
+			scoreMessage.width = 300;
+			scoreMessage.height = 100;
 			scoreMessage.defaultTextFormat = format;
 			scoreMessage.text = "Score: 0";
 			addChild(scoreMessage);
@@ -31,6 +32,15 @@ package {
 		public function update(increment:Number):void {
 			score += increment;
 			scoreMessage.text = "Score: " + score;
+		}
+		public function endGame(x:Number, y:Number):void {
+			this.x = x;
+			this.y = y;
+			graphics.clear();
+			graphics.beginFill(0x292421);
+			graphics.drawRect(-600, -600, 1200, 1200);
+			graphics.endFill();
+			scoreMessage.text = "You died...\n And your score was " + score;
 		}
 
 	}

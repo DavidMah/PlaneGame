@@ -14,7 +14,7 @@ package {
 			loadSprite();
 		}
 		override public function move():void {
-			this.y = this.y - 15;
+			this.y = this.y - 20;
 		}
 		override public function getType():String{return "PlaneBolt";}
 		override public function radius():Number{return 4;}
