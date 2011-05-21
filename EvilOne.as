@@ -6,6 +6,7 @@ package {
 	public class EvilOne extends Ship {
 		public var xVelocity:Number;
 		public var yVelocity:Number;
+		private static var imageFile:URLRequest = new URLRequest("http://www.davidpmah.com/planegame/images/evilone.png");
 		public function EvilOne(x:Number, y:Number):void {
 			this.x = x;
 			this.y = y;
@@ -34,6 +35,6 @@ package {
 			return "EvilOne";
 		}
 		override public function radius():Number{return 25;}
-		override public function image():URLRequest{return new URLRequest("images/evilone.png");};
+		override public function image():URLRequest{return imageFile;};
 	}
 }

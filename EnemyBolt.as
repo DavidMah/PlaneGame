@@ -5,6 +5,7 @@ package {
 	public class EnemyBolt extends Projectile {
 		public var xVelocity:Number;
 		public var yVelocity:Number;
+		private static var imageFile:URLRequest = new URLRequest("http://www.davidpmah.com/planegame/images/enemybolt1.png");
 		public function EnemyBolt(x:Number, y:Number):void {
 			super(x, y);
 			xVelocity = Math.random() * 1.5 - 0.75;
@@ -17,6 +18,6 @@ package {
 		}
 		override public function getType():String{return "EnemyBolt";}
 		override public function radius():Number{return 8;}
-		override public function image():URLRequest{return new URLRequest("images/enemybolt1.png");}
+		override public function image():URLRequest{return imageFile;}
 	}
 }

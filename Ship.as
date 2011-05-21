@@ -15,7 +15,7 @@ package {
 		public function getHealth():int {
 			return health;
 		}
-		public function die() {
+		public function die():void {
 			loader.contentLoaderInfo.addEventListener(Event.COMPLETE, setImage);
 			loader.load(deathImage());
 		}

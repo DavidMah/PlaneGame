@@ -9,6 +9,10 @@ package {
 		public var bg2:Loader = new Loader();
 		public var bg3:Loader = new Loader();
 		public var bg4:Loader = new Loader();
+
+		public var up:URLRequest = new URLRequest("images/grassup.png");
+		public var down:URLRequest = new URLRequest("images/grassdown.png");
+
 		public var loaded:int = 0;
 		public function Background():void {
 			this.x = 0;
@@ -18,8 +22,6 @@ package {
 			bg3.contentLoaderInfo.addEventListener(Event.COMPLETE, onLoaderComplete);
 			bg4.contentLoaderInfo.addEventListener(Event.COMPLETE, onLoaderComplete);
 
-			var up:URLRequest = new URLRequest("images/grassup.png");
-			var down:URLRequest = new URLRequest("images/grassdown.png");
 
 			bg1.load(up);
 			bg2.load(down);
