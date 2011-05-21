@@ -31,6 +31,8 @@ package {
 			stage.addEventListener(KeyboardEvent.KEY_DOWN, playButton.highlight);
 			stage.addEventListener(KeyboardEvent.KEY_UP, initializeGame);
 
+			EvilTwo.initializeClass();
+			PlaneBolt.initializeClass();
 		}
 		public function initializeGame(e:KeyboardEvent):void {
 			if(e.keyCode != 90) {
@@ -49,6 +51,7 @@ package {
 
 			player = new Plane(250, 600);
 			addChild(player);
+			Ship.player = player;
 			floaters.push([player]);
 			floaters.push([], [], [], [])
 			//player, enemy, planebolts, enemybolts

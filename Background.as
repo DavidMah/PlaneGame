@@ -10,8 +10,8 @@ package {
 		public var bg3:Loader = new Loader();
 		public var bg4:Loader = new Loader();
 
-		public var up:URLRequest = new URLRequest("images/grassup.png");
-		public var down:URLRequest = new URLRequest("images/grassdown.png");
+		public var up:URLRequest = new URLRequest("images/bgup.png");
+		public var down:URLRequest = new URLRequest("images/bgdown.png");
 
 		public var loaded:int = 0;
 		public function Background():void {
@@ -21,12 +21,14 @@ package {
 			bg2.contentLoaderInfo.addEventListener(Event.COMPLETE, onLoaderComplete);
 			bg3.contentLoaderInfo.addEventListener(Event.COMPLETE, onLoaderComplete);
 			bg4.contentLoaderInfo.addEventListener(Event.COMPLETE, onLoaderComplete);
+			
+			graphics.beginFill(0x000000);
+			graphics.drawRect(-10, -10, 850, 850);
 
-
-			bg1.load(up);
-			bg2.load(down);
-			bg3.load(up);
-			bg4.load(down);
+		//	bg1.load(up);
+		//	bg2.load(down);
+		//	bg3.load(up);
+		//	bg4.load(down);
 		}
 		public function onLoaderComplete(e:Event):void {
 			loaded += 1;

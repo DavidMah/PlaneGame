@@ -1,0 +1,10 @@
+Sprites from Touhou, www.spriters-resource.com.
+Don't mind how they look terrible -- Made the decision to upscale them to make the game more playable
+And the way I read the image files is weird, since I was having trouble doing file io. So I'm having it connect to an external site to get those images. So when enemies spawn they take time to load the images... so I have placeholder graphics... and the animated gif sprites don't work.. so the graphics was just a disaster
+Grassy Background was removed for vision
+
+Anyhow, just hold z to shoot and try to not get hit. It's supposed to get harder over time but I haven't played the game long enough to see how that really works out.
+
+As for the story ermm
+read http://en.wikipedia.org/wiki/Touhou
+That's pretty much what I copied, except Touhou is way horrifyingly harder than this could ever be

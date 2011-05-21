@@ -1,6 +1,7 @@
 package {
 	import flash.display.Sprite;
 	import flash.display.Loader;
+	import flash.net.URLRequest;
 	import flash.events.Event;
 
 	import flash.events.KeyboardEvent;
@@ -20,12 +21,14 @@ package {
 		private var down:Boolean;
 
 		private var health:int;
+		private static var imageFile:URLRequest = new URLRequest("http://www.davidpmah.com/planegame/images/reimu.gif");
 
 		public function Plane(x:Number, y:Number):void {
+			loadSprite();
 			graphics.lineStyle(2, 0x000000);
-			graphics.drawRect(-10, -10, 20, 20);
-			graphics.lineStyle(2, 0xff0000);
-			graphics.drawCircle(0, 0, 3);
+			//graphics.drawRect(-10, -10, 20, 20);
+			graphics.beginFill(0xff0000);
+	//		graphics.drawCircle(0, 0, 3);
 			this.x = x;
 			this.y = y;
 			horizontal = 1;
@@ -103,8 +106,8 @@ package {
 			return sendbacks;
 		}
 		override public function move():void {
-			var f:Number = 5;
-			var s:Number = 1.5;
+			var f:Number = 7;
+			var s:Number = 2;
 			
 			var xwise:Number = horizontal;
 			var ywise:Number = vertical;
@@ -137,6 +140,15 @@ package {
 		override public function hurt(n:int):void {
 			
 		}
-		override public function radius():Number {return 3;}
+		override public function radius():Number {return 5;}
+		override public function image():URLRequest{return imageFile;}
+		override public function redraw():void {
+			var dot:Sprite = new Sprite();
+			dot.graphics.lineStyle(2, 0x000000);
+			dot.graphics.beginFill(0xFF0000);
+			dot.graphics.drawCircle(0, 0, 5);
+			addChild(loader);
+			addChild(dot);
+		}
 	}
 }

@@ -7,6 +7,9 @@ package {
 
 	public class PlaneBolt extends Projectile {
 		private static var imageFile:URLRequest = new URLRequest("http://www.davidpmah.com/planegame/images/planebolt.png");
+		public static function initializeClass():void { 
+			imageFile.cacheResponse = true;
+		}
 		public function PlaneBolt(x:Number, y:Number):void {
 			super(x, y);
 			loadSprite();

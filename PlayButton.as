@@ -35,7 +35,7 @@ package {
 			instructions.width = 400;
 			instructions.height = 600;
 			instructions.defaultTextFormat = format;
-			instructions.text = "Z - Fire\nLeft - Left\nRight - Right\nUp - Up\nDown - Down";
+			instructions.text = "Z - Fire\nLeft - Left\nRight - Right\nUp - Up\nDown - Down\nShift - Slow\n\nYour hit box is the red dot";
 			addChild(instructions);
 			addChild(text);
 		}

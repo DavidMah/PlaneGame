@@ -7,7 +7,23 @@ package {
 
 	public class Ship extends Floater {
 		private var health:int;
+		public static var player:Ship;
+		public function getRatio():Array {
+			var changeX:Number = player.x - this.x;
+			var changeY:Number = player.y - this.y;
+			var magnitude:Number = Math.sqrt(changeY * changeY + changeX * changeX);
+			changeY = changeY / magnitude;
+			changeX = changeX / magnitude;
+			var components:Array = new Array();
+			components.push(changeX);
+			components.push(changeY);
+			return components;
+		}
 		public function initialize(type:String):void {
+		}
+		public function setVelocity(x:Number, y:Number):void {
+			xVelocity = x;
+			yVelocity = y;
 		}
 		public function hurt(n:int):void {
 			health = health - n;

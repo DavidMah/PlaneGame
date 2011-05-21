@@ -7,6 +7,8 @@ package  {
 
 	public class Floater extends Sprite {
 		public var loader:Loader = new Loader();
+		public var xVelocity:Number = 0;
+		public var yVelocity:Number = 0;
 		public function Floater():void {
 		}
 		public function loadSprite():void {
@@ -19,6 +21,7 @@ package  {
 			addChild(loader);
 			loader.x = loader.x - (loader.width / 2);
 			loader.y = loader.y - (loader.height / 2);
+			redraw();
 		}
 		public function getType():String {
 			return "Floater";
@@ -39,7 +42,7 @@ package  {
 			return collided;
 		}
 		public function checkBounds(index:int):Signal {
-			if(this.y > 850 || this.y < -40 || this.x < -50 || this.x > 550)
+			if(this.y > 950 || this.y < -150 || this.x < -50 || this.x > 550)
 				return (new Signal()).setDestroy(true, this).setIndex(index);
 			return null;
 		}
@@ -57,5 +60,6 @@ package  {
 		}
 		public function radius():Number{return 0;}
 		public function image():URLRequest{return null;}
+		public function redraw():void {return;}
 	}
 }
