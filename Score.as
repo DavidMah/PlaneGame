@@ -13,6 +13,8 @@ package {
 
 			graphics.beginFill(0x292421);
 			graphics.drawRect(0, 0, 400, 800);
+			graphics.beginFill(0xffffff);
+			graphics.drawRect(-x - 400, -y, 400, 800);
 			graphics.endFill();
 
 
@@ -38,7 +40,7 @@ package {
 			this.y = y;
 			graphics.clear();
 			graphics.beginFill(0x292421);
-			graphics.drawRect(-600, -600, 1200, 1200);
+			graphics.drawRect(-x, -y, 800, 800);
 			graphics.endFill();
 			scoreMessage.text = "You died...\n And your score was " + score;
 		}

@@ -5,7 +5,7 @@ package {
 	public class EvilTwo extends Ship {
 		private static var imageFile:URLRequest = new URLRequest("http://www.davidpmah.com/planegame/images/eviltwo.png");
 		public static function initializeClass():void {
-			imageFile.setCacheResponse(true);
+	//		imageFile.setCacheResponse(true);
 		}
 		public function EvilTwo(x:Number, y:Number):void {
 			this.x = x;
@@ -19,7 +19,7 @@ package {
 		}
 		override public function act(index:int):Array {
 			var sendbacks:Array = super.act(index);
-			if(Math.random() * 40 < 1) {
+			if(Math.random() * 20 < 1) {
 				sendbacks.push( (new Signal()).setFloater(this.fire()).setIndex(index));
 			}
 			this.move();
@@ -27,7 +27,7 @@ package {
 		}
 		public function fire():Projectile {
 			var bolt:EnemyBoltTwo = new EnemyBoltTwo(this.x, this.y + 16);
-			if(this.y < player.y && Math.random() * 2 < 1) 
+			if(this.y < player.y && Math.random() * 3 < 1) 
 				bolt.affectVelocity(getRatio());
 			return bolt;
 		}

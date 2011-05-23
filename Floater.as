@@ -42,7 +42,11 @@ package  {
 			return collided;
 		}
 		public function checkBounds(index:int):Signal {
-			if(this.y > 950 || this.y < -150 || this.x < -50 || this.x > 550)
+			var minX:Number = (50.0 * this.y / 400) - 50;
+			minX = (minX < 0 ? minX : 0);
+			var maxX:Number = 550 - (50.0 * this.y / 400);
+			maxX = (maxX > 500 ? maxX : 500);
+			if(this.x < minX || this.x > maxX)
 				return (new Signal()).setDestroy(true, this).setIndex(index);
 			return null;
 		}

@@ -123,7 +123,7 @@ package {
 				ywise = -ywise;
 			}
 
-			if( !(this.x - 10  < 0 && xwise < 0) && !(this.x + 10 > 500 && xwise > 0)) {
+			if( !(this.x + 10  < 0 && xwise < 0) && !(this.x + 10 > 500 && xwise > 0)) {
 				this.x = this.x + xwise * (slow ? s : f);
 			}
 			if( !(this.y - 10 < 0 && ywise < 0) && !(this.y + 10 > 800 && ywise > 0)) {
@@ -145,7 +145,7 @@ package {
 		override public function redraw():void {
 			var dot:Sprite = new Sprite();
 			dot.graphics.lineStyle(2, 0x000000);
-			dot.graphics.beginFill(0xFF0000);
+			dot.graphics.beginFill(0x0000FF);
 			dot.graphics.drawCircle(0, 0, 5);
 			addChild(loader);
 			addChild(dot);
